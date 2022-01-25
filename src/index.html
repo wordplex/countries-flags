@@ -16,12 +16,18 @@
     <section class="content-wrapper">
       <header class="header">
         <div id="backdrop" class="backdrop"></div>
-        <img class="logo" src="./assets/logo.png" alt="wordplex logo" />
+        <nav>
+          <a href="/">
+            <img class="logo" src="./assets/logo.png" alt="wordplex logo" />
+          </a>
+        </nav>
         <button class="burger-btn" id="burger-btn" aria-label="Right Align">
           <i class="fa fa-bars"></i>
         </button>
         <div class="mobile-navbar" id="mobile-navbar">
-          <a class="nav-link" href="./countries.html"> Country flags</a>
+          <a class="nav-link" href="/"> Country flags</a>
+          <a class="nav-link" href="#instruction"> Phone validation</a>
+          <a class="nav-link" href="#instruction">Documentation</a>
         </div>
         <nav class="navbar">
           <a class="nav-link" href="#instruction">Documentation</a>
@@ -35,7 +41,8 @@
               />
             </button>
             <div id="dropdown" class="drop-down-content">
-              <a class="nav-link" href="#instruction"> Country flags</a>
+              <a class="nav-link" href="/"> Country flags</a>
+              <a class="nav-link" href="#instruction"> Phone validation</a>
             </div>
           </div>
         </nav>
@@ -102,7 +109,6 @@
               class="width-input"
               type="number"
               id="width"
-              disabled
               placeholder="auto"
               autocomplete="off"
             />
@@ -113,7 +119,6 @@
               class="width-input"
               type="number"
               id="height"
-              disabled
               placeholder="auto"
               autocomplete="off"
             />
@@ -142,7 +147,7 @@
           <div class="iso-mark"></div>
           <div class="size-mark"></div>
         </div>
-        <div id="img-output">
+        <div id="img-output" class="img-output">
           <pre id="pretty-data" class="prettyprint">
             <div class="img-out-link">
                           <p><span class="pretty-blue-color">&lt;img</span> <br> <span class="pretty-blue-color">src=</span><span class="pretty-cyan-color">"https://wordplex.cloudimg.io/v7w/flag/country/FR-200.png"</span><br> <span class="pretty-blue-color">srcset=</span><span class="pretty-cyan-color">"https://wordplex.cloudimg.io/v7w/flag/country/FR-200.png 2x"</span><br> <span class="pretty-blue-color">width=</span><span class="pretty-cyan-color">"200"</span><br> <span class="pretty-blue-color">height=</span><span class="pretty-cyan-color">"auto"</span><br> <span class="pretty-blue-color">alt=</span><span class="pretty-cyan-color">"France flag"></span></p>
@@ -190,7 +195,6 @@
               class="width-input"
               type="number"
               id="lang-width"
-              disabled
               placeholder="auto"
               autocomplete="off"
             />
@@ -201,7 +205,6 @@
               class="width-input"
               type="number"
               id="lang-height"
-              disabled
               placeholder="auto"
               autocomplete="off"
             />
@@ -272,7 +275,6 @@
               class="width-input"
               type="number"
               id="phone-width"
-              disabled
               placeholder="auto"
               autocomplete="off"
             />
@@ -283,7 +285,6 @@
               class="width-input"
               type="number"
               id="phone-height"
-              disabled
               placeholder="auto"
               autocomplete="off"
             />
@@ -335,7 +336,15 @@
 
     <section class="footer">
       <div class="logo">
-        <img class="footer-logo" src="./assets/logo.png" alt="wordplex logo" />
+        <nav>
+          <a href="/">
+            <img
+              class="footer-logo"
+              src="./assets/logo.png"
+              alt="wordplex logo"
+            />
+          </a>
+        </nav>
       </div>
       <div class="footer-links-wrapper">
         <div class="links-wrapper">

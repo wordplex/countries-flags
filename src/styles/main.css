@@ -92,6 +92,10 @@ html {
   display: inline-block;
 }
 
+.content-wrapper .navbar .drop-down:hover .drop-down-content {
+  display: block;
+}
+
 .content-wrapper .navbar .drop-down a:hover {
   background-color: #ddd;
 }
@@ -116,11 +120,16 @@ html {
   display: none;
   position: absolute;
   width: 123px;
+  top: 8px;
   overflow: auto;
   background: #f8fafb;
   border-radius: 4px;
   z-index: 1;
   transform: translate3d(-49px, 8px, 0px) !important;
+}
+
+.content-wrapper .drop-down-content:hover .drop-down-content {
+  display: block;
 }
 
 .content-wrapper .navbar .show {
@@ -233,7 +242,7 @@ html {
 .validation-wrapper .data-validation .input-group {
   display: flex;
   align-items: center;
-  width: 680px;
+  width: 772px;
   position: relative;
 }
 
@@ -258,7 +267,7 @@ html {
   color: gray;
   position: absolute;
   top: calc(50% - 19px / 2);
-  right: 20px;
+  right: 11px;
   transition: 0.1s;
   height: 25px;
   width: 25px;
@@ -274,13 +283,12 @@ html {
 
 .validation-wrapper .input-group .close-icon {
   position: absolute;
-  right: 56px;
+  right: 43px;
   height: 25px;
   width: 25px;
   font-size: 14px;
   padding-top: 6px;
   padding-left: 7px;
-  display: none;
   top: calc(50% - (18px / 2));
   color: gray;
 }
@@ -346,6 +354,7 @@ html {
   font-family: "Roboto";
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 115px;
   font-size: 12px;
   line-height: 14px;
@@ -357,6 +366,7 @@ html {
 
 .validation-wrapper .data-validation .resize-width,
 .validation-wrapper .data-validation .resize-height {
+  display: none;
   margin-left: 20px;
   margin-top: 20px;
   font-size: 13px;
@@ -420,6 +430,9 @@ html {
 .validation-wrapper .data-validation .validation-output p {
   font-size: 18px;
   line-height: 36px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   color: #062e5d;
   font-weight: 500;
   font-family: "Rubik";
@@ -569,6 +582,11 @@ html {
   font-family: "Rubik";
   font-size: 18px;
   font-weight: 500;
+  overflow: auto;
+}
+
+.validation-wrapper .data-validation pre.prettyprint::-webkit-scrollbar {
+  display: none;
 }
 
 .validation-wrapper .data-validation .prettyprint span {
@@ -763,6 +781,53 @@ html {
   background-color: #dce2e9;
 }
 
+@media (min-width: 1960px) {
+  .content-wrapper {
+    max-width: 100%;
+  }
+
+  .content-wrapper .header {
+    margin: auto;
+    width: 1550px;
+  }
+
+  .content-wrapper .content {
+    margin: auto;
+    margin: auto;
+    padding-left: 100px;
+    width: unset;
+  }
+
+  .validation-wrapper {
+    max-width: 100%;
+  }
+
+  .validation-wrapper .description {
+    margin: auto;
+    max-width: 1550px;
+  }
+
+  .validation-wrapper .data-validation {
+    margin: auto;
+    max-width: 1550px;
+    width: unset;
+  }
+
+  .validation-wrapper .data-validation:nth-child(3) {
+    margin: auto;
+    max-width: 1550px;
+  }
+
+  .footer {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .footer .logo img {
+    margin-right: 507px;
+  }
+}
+
 @media (max-width: 1550px) {
   .validation-wrapper .data-validation:nth-child(3) {
     margin-left: 433px;
@@ -810,6 +875,11 @@ html {
 
   .validation-wrapper .data-validation p {
     width: 540px;
+    overflow: auto;
+  }
+
+  .validation-wrapper .data-validation p::-webkit-scrollbar {
+    display: none;
   }
 
   .validation-wrapper .data-validation .input-group {
@@ -841,12 +911,18 @@ html {
   }
 
   .validation-wrapper .data-validation .validation-output p {
-    width: 0;
-    display: flex;
+    font-size: 18px;
+    line-height: 36px;
+    white-space: nowrap;
+    color: #062e5d;
+    width: 593px;
+    text-overflow: unset;
+    padding-left: 10px;
+    overflow: unset;
   }
 
   .validation-wrapper .data-validation .validation-output-hint {
-    width: 579px;
+    display: none;
   }
 
   .validation-wrapper .data-validation .validation-output-hint p:nth-child(2) {
