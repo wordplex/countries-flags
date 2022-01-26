@@ -132,10 +132,6 @@ html {
   display: block;
 }
 
-.content-wrapper .navbar .show {
-  display: block;
-}
-
 .content-wrapper .navbar .drop-down-content a {
   color: rgba(6, 46, 93, 1);
   margin-right: 0;
@@ -787,13 +783,12 @@ html {
   }
 
   .content-wrapper .header {
-    margin: auto;
+    margin: 0 auto;
     width: 1550px;
   }
 
   .content-wrapper .content {
-    margin: auto;
-    margin: auto;
+    margin: 0 auto;
     padding-left: 100px;
     width: unset;
   }
