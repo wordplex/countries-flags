@@ -35,12 +35,9 @@ const phoneResizeHeight = document.getElementById("phone-height");
 const prettyData = document.getElementById("pretty-data");
 const langPrettyData = document.getElementById("lang-pretty-data");
 const phonePrettyData = document.getElementById("phone-pretty-data");
-const dropBtn = document.getElementById("drop-btn");
-const dropdown = document.getElementById("dropdown");
 const backDrop = document.getElementById("backdrop");
 const mobileNavbar = document.getElementById("mobile-navbar");
 const burgerBtn = document.getElementById("burger-btn");
-const AssetsArrow = document.getElementById("assets-arrow");
 const url = document.getElementById("url");
 const countryCode = document.getElementById("country-code");
 const flagSize = document.getElementById("flag-size");
@@ -48,6 +45,7 @@ const imgType = document.getElementById("img-type");
 const langUrl = document.getElementById("lang-url");
 const langCountryCode = document.getElementById("lang-country-code");
 const langFlagSize = document.getElementById("lang-flag-size");
+const phoneUrl = document.getElementById("phone-url");
 const phoneCountryCode = document.getElementById("phone-country-code");
 const phoneFlagSize = document.getElementById("phone-flag-size");
 const langImgType = document.getElementById("lang-img-type");
@@ -57,6 +55,12 @@ const langInputCloseMark = document.getElementById("lang-input-close-mark");
 const phoneInputCloseMark = document.getElementById("phone-input-close-mark");
 const isoArrowIcon = document.getElementById("iso-arrow-icon");
 const langArrowIcon = document.getElementById("lang-arrow-icon");
+const copyButton = document.getElementById("copy-button");
+const copyUrl = document.getElementById("copy-url");
+const langCopyButton = document.getElementById("lang-copy-button");
+const langCopyUrl = document.getElementById("copy-lang-url");
+const phoneCopyButton = document.getElementById("phone-copy-button");
+const copyPhoneUrl = document.getElementById("copy-phone-url");
 
 let selectedLanguage = {};
 let selectedCountry = {};
@@ -79,7 +83,7 @@ let isLangListOpen = false;
           text = text.toLowerCase();
           const suggestions = items
             .filter((n) =>
-              isSelectedLanguage ? true : n.name.toLowerCase().startsWith(text)
+              isSelectedLanguage ? true : n.name.toLowerCase().startsWith(text),
             )
             .map((item) => ({ label: item.name, value: item.iso_2 }));
           update(suggestions);
@@ -117,7 +121,7 @@ let isLangListOpen = false;
           text = text.toLowerCase();
           var suggestions = items
             .filter((n) =>
-              isSelectedCountry ? true : n.name.toLowerCase().startsWith(text)
+              isSelectedCountry ? true : n.name.toLowerCase().startsWith(text),
             )
             .map((item) => ({ label: item.name, value: item.alpha2Code }));
 
@@ -445,6 +449,22 @@ function blurCountryInputHandler(event) {
   openCountryListHandler(event);
 }
 
+function copyCountryFlagLink() {
+  const imgURL = `${url.innerHTML}${countryCode.innerHTML}
+  -${flagSize.innerHTML}.${imgType.innerHTML}`;
+
+  navigator.clipboard.writeText(imgURL);
+
+  //copy img URL for Iso case
+  if (copyButton.innerHTML === "Copy") {
+    copyButton.innerHTML = "copied";
+
+    setTimeout(() => {
+      copyButton.innerHTML = "Copy";
+    }, 500);
+  }
+}
+
 // language event handler
 function changeLangFlagHandler(langName, countryValue) {
   const widthValue = langResizeWidth.value;
@@ -562,6 +582,22 @@ function blurLangInputHandler() {
   openLangListHandler();
 }
 
+function langCopyCountryFlagLink() {
+  const imgURL = `${langUrl.innerHTML}${langCountryCode.innerHTML}
+  -${langFlagSize.innerHTML}.${imgType.innerHTML}`;
+
+  navigator.clipboard.writeText(imgURL);
+
+  //copy img URL for phone case
+  if (langCopyButton.innerHTML === "Copy") {
+    langCopyButton.innerHTML = "copied";
+
+    setTimeout(() => {
+      langCopyButton.innerHTML = "Copy";
+    }, 500);
+  }
+}
+
 // phone event handler
 function changePhoneFlagHandler() {
   const phoneNumber = phoneInput.value;
@@ -644,6 +680,22 @@ function openPhoneXMarkHandler() {
   phoneInputCloseMark.style.display = "block";
 }
 
+function phoneCopyCountryFlagLink() {
+  const imgURL = `${phoneUrl.innerHTML}${phoneCountryCode.innerHTML}
+  -${phoneFlagSize.innerHTML}.${imgType.innerHTML}`;
+
+  navigator.clipboard.writeText(imgURL);
+
+  //copy img URL for Iso case
+  if (phoneCopyButton.innerHTML === "Copy") {
+    phoneCopyButton.innerHTML = "copied";
+
+    setTimeout(() => {
+      phoneCopyButton.innerHTML = "Copy";
+    }, 500);
+  }
+}
+
 //country Iso attach events
 countrySelectInput.addEventListener("focus", focusCountryInputHandler);
 countrySelectInput.addEventListener("keydown", changeCountryInputHandler);
@@ -658,6 +710,7 @@ inputCloseMark.addEventListener("click", clearInputHandler);
 backDrop.addEventListener("click", closeMobileNavbarHandler);
 mobileNavbar.addEventListener("click", closeMobileNavbarHandler);
 burgerBtn.addEventListener("click", toggleMobileNavbar);
+copyUrl.addEventListener("click", copyCountryFlagLink);
 window.addEventListener("keydown", keydown);
 
 //language attach events
@@ -669,6 +722,7 @@ pngLangBtn.addEventListener("click", changeLangPngHandler);
 svgLangBtn.addEventListener("click", changeLangSvgHandler);
 langResizeCheck.addEventListener("click", langResizeChecked);
 langInputCloseMark.addEventListener("click", clearLangInputHandler);
+langCopyUrl.addEventListener("click", langCopyCountryFlagLink);
 langResizeWidth.addEventListener(
   "keydown",
   debounce(langChangeWidthHandler, 100),
@@ -685,6 +739,7 @@ phoneInput.addEventListener("keydown", debounce(changePhoneFlagHandler, 800));
 phoneInput.addEventListener("click", openPhoneXMarkHandler);
 pngPhoneBtn.addEventListener("click", changePhonePngHandler);
 svgPhoneBtn.addEventListener("click", changePhoneSvgHandler);
+copyPhoneUrl.addEventListener("click", phoneCopyCountryFlagLink);
 phoneResizeWidth.addEventListener(
   "keydown",
   debounce(phoneChangeWidthHandler, 300),

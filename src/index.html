@@ -10,17 +10,16 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Rubik:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" type="image/x-icon" href="/src/assets/favicon-32x32.png" />
   </head>
 
   <body>
     <section class="content-wrapper">
       <header class="header">
         <div id="backdrop" class="backdrop"></div>
-        <nav>
-          <a href="/">
-            <img class="logo" src="./assets/logo.png" alt="wordplex logo" />
-          </a>
-        </nav>
+        <a href="#">
+          <img class="logo" src="./assets/logo.png" alt="wordplex logo" />
+        </a>
         <button class="burger-btn" id="burger-btn" aria-label="Right Align">
           <i class="fa fa-bars"></i>
         </button>
@@ -124,7 +123,13 @@
             />
           </div>
         </div>
-        <div class="preview-text">Preview</div>
+        <div class="preview">
+          Preview
+          <span id="copy-url" class="copy-icon">
+            <img src="/src/assets/copy-icon.png" alt="copy icon" />
+            <span id="copy-button">Copy</span>
+          </span>
+        </div>
         <div class="validation-out-with-img">
           <div id="validation-output" class="validation-output">
             <p>
@@ -210,7 +215,13 @@
             />
           </div>
         </div>
-        <div class="preview-text">Preview</div>
+        <div class="preview">
+          Preview
+          <span id="copy-lang-url" class="copy-icon">
+            <img src="/src/assets/copy-icon.png" alt="copy icon" />
+            <span id="lang-copy-button">Copy</span>
+          </span>
+        </div>
         <div class="validation-out-with-img">
           <div id="lang-validation-output" class="validation-output">
             <p>
@@ -290,7 +301,13 @@
             />
           </div>
         </div>
-        <div class="preview-text">Preview</div>
+        <div class="preview">
+          Preview
+          <span id="copy-phone-url" class="copy-icon">
+            <img src="/src/assets/copy-icon.png" alt="copy icon" />
+            <span id="phone-copy-button">Copy</span>
+          </span>
+        </div>
         <div class="validation-out-with-img">
           <div id="phone-validation-output" class="validation-output">
             <p>
@@ -315,7 +332,7 @@
           <div class="size-mark"></div>
         </div>
         <div class="img-output">
-          <pre id="phone-pretty-data" class="prettyprint">
+          <pre id="phone-pretty-data" class="prettyprint phone-prettyprint">
             <div class="img-out-link">
                           <p><span class="pretty-blue-color">&lt;img</span> <br> <span class="pretty-blue-color">src=</span><span class="pretty-cyan-color">"https://wordplex.cloudimg.io/v7w/flag/phone/33-200.png"</span><br> <span class="pretty-blue-color">srcset=</span><span class="pretty-cyan-color">"https://wordplex.cloudimg.io/v7w/flag/phone/33-200.png 2x"</span><br> <span class="pretty-blue-color">width=</span><span class="pretty-cyan-color">"200"</span><br> <span class="pretty-blue-color">height=</span><span class="pretty-cyan-color">"auto"</span><br> <span class="pretty-blue-color">alt=</span><span class="pretty-cyan-color">"France country"></span></p>
 
@@ -336,15 +353,13 @@
 
     <section class="footer">
       <div class="logo">
-        <nav>
-          <a href="/">
-            <img
-              class="footer-logo"
-              src="./assets/logo.png"
-              alt="wordplex logo"
-            />
-          </a>
-        </nav>
+        <a href="#">
+          <img
+            class="footer-logo"
+            src="./assets/logo.png"
+            alt="wordplex logo"
+          />
+        </a>
       </div>
       <div class="footer-links-wrapper">
         <div class="links-wrapper">
