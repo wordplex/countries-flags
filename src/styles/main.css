@@ -813,8 +813,6 @@ html {
 
   .content-wrapper .content {
     margin: 0 auto;
-    padding-left: 100px;
-    width: unset;
   }
 
   .validation-wrapper {
@@ -849,7 +847,7 @@ html {
 
 @media (max-width: 1550px) {
   .validation-wrapper .data-validation:nth-child(3) {
-    margin-left: 433px;
+    margin-left: 499px;
   }
 }
 
