@@ -70,7 +70,7 @@ let isCountryListOpen = false;
 let isLangListOpen = false;
 
 (function fetchingLanguages() {
-  fetch(`http://geo.wordplex.io/v4/langs`)
+  fetch(`https://geo.wordplex.io/v4/langs`)
     .then((res) => res.json())
     .then(({ items }) => {
       autocomplete({
@@ -109,7 +109,7 @@ let isLangListOpen = false;
 })();
 
 (function fetchingCountries() {
-  fetch(`http://geo.wordplex.io/v4/countries`)
+  fetch(`https://geo.wordplex.io/v4/countries`)
     .then((res) => res.json())
     .then(({ items }) => {
       autocomplete({
