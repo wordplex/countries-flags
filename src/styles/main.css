@@ -827,12 +827,12 @@ html {
   .validation-wrapper .data-validation {
     margin: auto;
     max-width: 1550px;
-    width: unset;
+    width: 1118px;
   }
 
   .validation-wrapper .data-validation:nth-child(3) {
     margin: auto;
-    max-width: 1550px;
+    width: 300px;
   }
 
   .footer {
